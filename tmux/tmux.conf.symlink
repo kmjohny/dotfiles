@@ -1,0 +1,32 @@
+# 256 colors for vim
+set -g default-terminal "screen-256color"
+
+
+# use ctrl+a rather than ctrl+b
+unbind C-b  
+set-option -g prefix C-a  
+bind C-a send-prefix  
+
+
+
+# =========== Testing Start ==============
+
+### kmjohny/tmux-themes settings
+# - set -g @theme_color blue :- options include [red, orange, blue, cyan, magenta, gray, yellow, green]
+set -g @themes_color "orange"
+
+set -g status-left "#[fg=$themes_fg,bg=$themes_bg,bold] ❐ #S #[fg=$themes_sep_fg,bg=$themes_sep_bg,nobold]#[fg=colour233,bg=colour240] #(whoami) #[fg=$themes_sep_fg,bg=$themes_sep_bg,nobold]#[fg=colour240,bg=colour235] #I:#P #[fg=$themes_sep_fg,bg=$themes_sep_bg,nobold]"
+set -g status-right "#[fg=$themes_sep_fg,bg=$themes_sep_bg,nobold] #{battery_icon} #{battery_graph_pretty} #{battery_percentage} #[fg=$themes_sep_fg,bg=$themes_sep_bg,nobold] #[fg=colour240,bg=colour235] %H:%M:%S | %d-%b-%y #[fg=$themes_sep_fg,bg=$themes_sep_bg,nobold] #[fg=$themes_fg,bg=$themes_bg,bold] #H "
+
+# =========== Testing End ==============
+
+
+
+# List of plugins (Keep at the bottom of tmux.conf)
+set -g @plugin "tmux-plugins/tpm"
+# set -g @plugin "tmux-plugins/tmux-prefix-highlight"
+set -g @plugin "kmjohny/tmux-battery"
+set -g @plugin "kmjohny/tmux-themes"
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'
