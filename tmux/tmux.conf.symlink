@@ -12,8 +12,8 @@ bind r source-file ~/.tmux.conf
 # - set -g @theme_color blue :- options include [red, orange, blue, cyan, magenta, gray, yellow, green]
 set -g @themes_color "orange"
 
-set -g status-left "#[fg=$themes_fg,bg=$themes_bg,bold] ❐ #S #[fg=$themes_sep_fg,bg=$themes_sep_bg,nobold]#[fg=colour233,bg=colour240] #(whoami) #[fg=$themes_sep_fg,bg=$themes_sep_bg,nobold]#[fg=colour240,bg=colour235] #I:#P #[fg=$themes_sep_fg,bg=$themes_sep_bg,nobold]"
-set -g status-right "#[fg=$themes_sep_fg,bg=$themes_sep_bg,nobold] #{battery_icon} #{battery_graph_pretty} #{battery_percentage} #[fg=$themes_sep_fg,bg=$themes_sep_bg,nobold] #[fg=colour240,bg=colour235] %H:%M:%S | %d-%b-%y #[fg=$themes_sep_fg,bg=$themes_sep_bg,nobold] #[fg=$themes_fg,bg=$themes_bg,bold] #H "
+set -g status-left "#[fg=$themes_fg,bg=$themes_bg,bold] ❐ #S #[fg=$themes_sep_fg,bg=$themes_sep_bg,nobold]#[fg=colour233,bg=default] #(whoami) #[fg=$themes_sep_fg,bg=$themes_sep_bg,nobold]#[fg=colour240,bg=colour235] #I:#P #[fg=$themes_sep_fg,bg=$themes_sep_bg,nobold]"
+set -g status-right "#[fg=$themes_sep_fg,bg=$themes_sep_bg,nobold] #{battery_icon} #{battery_graph_pretty} #{battery_percentage} #[fg=$themes_sep_fg,bg=$themes_sep_bg,nobold] #[fg=colour240,bg=default] %H:%M:%S | %d-%b-%y #[fg=$themes_sep_fg,bg=$themes_sep_bg,nobold] #[fg=$themes_fg,bg=$themes_bg,bold] #H "
 
 ### tmux-plugins/tpm settings
 # Change key binding for unstalling prefix + U
@@ -26,6 +26,8 @@ set -g @plugin "tmux-plugins/tpm"
 set -g @plugin "tmux-plugins/tmux-sessionist"
 set -g @plugin "tmux-plugins/tmux-sensible"
 set -g @plugin "tmux-plugins/tmux-pain-control"
+set -g @plugin "tmux-plugins/tmux-resurrect"
+set -g @plugin "tmux-plugins/tmux-continuum"
 set -g @plugin "kmjohny/tmux-battery"
 set -g @plugin "kmjohny/tmux-themes"
 
