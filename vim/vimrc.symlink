@@ -18,12 +18,11 @@ Plug 'bkad/CamelCaseMotion',
 Plug 'bling/vim-airline',
 Plug 'vim-airline/vim-airline-themes',
 Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') },
-
+" Assumes fzf is already installed using brew. 
+Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 
 
 Plug 'eugen0329/vim-esearch',
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' },
-Plug 'junegunn/fzf.vim',
 Plug 'flazz/vim-colorschemes',
 Plug 'tpope/vim-sensible',
 Plug 'tpope/vim-surround',
