@@ -23,3 +23,5 @@ if [ -d $ECLIPSE_HOME ]; then
     fi
  fi
 fi
+
+exit 0
