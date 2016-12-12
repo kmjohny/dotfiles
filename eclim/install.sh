@@ -10,11 +10,16 @@ if [ -d $ECLIPSE_HOME ]; then
   curl -Lo $ECLIM_DOWNLOAD_FILE $ECLIM_DOWNLOAD_URL
 
   if [ -f $ECLIM_DOWNLOAD_FILE ]; then
-    java -Dvim.files=$HOME/.vim -Declipse.home=$ECLIPSE_HOME -jar $ECLIM_DOWNLOAD_FILE uninstall
+    java -Dvim.files=$HOME/.vim -Declipse.home=$ECLIPSE_HOME -jar $ECLIM_DOWNLOAD_FILE install
 
     rm $ECLIM_DOWNLOAD_FILE
     
-#    ln -s $ECLIPSE_HOME/eclim /usr/local/bin/eclim
-#    ln -s $ECLIPSE_HOME/eclimd /usr/local/bin/eclimd
+    if [ ! -f /usr/local/bin/eclim ]; then
+      ln -s $ECLIPSE_HOME/eclim /usr/local/bin/eclim
+    fi
+
+    if [ ! -f /usr/local/bin/eclimd ]; then
+      ln -s $ECLIPSE_HOME/eclimd /usr/local/bin/eclimd
+    fi
  fi
 fi
