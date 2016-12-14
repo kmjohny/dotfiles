@@ -173,3 +173,5 @@ nnoremap <space>s :Buffers<cr>
 
 " eclim setup auto-completion using Valloric/YouCompleteMe
 let g:EclimCompletionMethod = 'omnifunc'
+" vim command setup to start eclimd
+command StartupEclim 'eclimd -b'
