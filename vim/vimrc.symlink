@@ -20,8 +20,7 @@ Plug 'vim-airline/vim-airline-themes',
 Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') },
 " Assumes fzf is already installed using brew. 
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim',
-Plug 'Valloric/YouCompleteMe',
-
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' },
 
 Plug 'eugen0329/vim-esearch',
 Plug 'flazz/vim-colorschemes',
@@ -174,4 +173,4 @@ nnoremap <space>s :Buffers<cr>
 " eclim setup auto-completion using Valloric/YouCompleteMe
 let g:EclimCompletionMethod = 'omnifunc'
 " vim command setup to start eclimd
-command StartupEclim 'eclimd -b'
+command StartupEclim :silent !eclimd -b
