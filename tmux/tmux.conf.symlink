@@ -12,12 +12,24 @@ bind r source-file ~/.tmux.conf
 # - set -g @theme_color blue :- options include [red, orange, blue, cyan, magenta, gray, yellow, green]
 set -g @themes_color "orange"
 
+### Set left and right status 
 set -g status-left "#[fg=$themes_fg,bg=$themes_bg,bold] ❐ #S #[fg=$themes_sep_fg,bg=$themes_sep_bg,nobold]#[fg=colour233,bg=default,bold] #(whoami) #[fg=$themes_sep_fg,bg=$themes_sep_bg,nobold]#[fg=colour240,bg=default,bold] #I:#P #[fg=$themes_sep_fg,bg=$themes_sep_bg,nobold]"
 set -g status-right "#[fg=$themes_sep_fg,bg=$themes_sep_bg,nobold] #{battery_icon} #{battery_graph_pretty} #{battery_percentage} #[fg=$themes_sep_fg,bg=$themes_sep_bg,nobold] #[fg=colour240,bg=default,bold] %H:%M:%S | %d-%b-%y #[fg=$themes_sep_fg,bg=$themes_sep_bg,nobold] #[fg=$themes_fg,bg=$themes_bg,bold] #H "
 
+### Set titles
+set-option -g set-titles on
+set-option -g set-titles-string '#H:#S.#I.#P #W #T' # window number,program name, active(or not)
+
+### Set base index for session to start with 1 instead of 0
+set -g base-index 1
+
 ### tmux-plugins/tpm settings
-# Change key binding for unstalling prefix + U
-set -g @tpm-clean "U"
+# Change key binding for unstalling prefix + R
+set -g @tpm-clean "R"
+
+### tmux-plugins/tmux-continuum settings
+# Restore last saved session when tmux is started
+set -g @continuum-restore 'on'
 
 # =========== Testing End ==============
 
