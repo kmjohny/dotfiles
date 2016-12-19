@@ -1,3 +1,9 @@
 # Initilize kubectl completion for zsh.
-source <(kubectl completion zsh)
+# Check for kubectl
+if test $(which kubectl)
+then
+  source <(kubectl completion zsh)
+fi
+
+
 
