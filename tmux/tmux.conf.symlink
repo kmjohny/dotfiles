@@ -20,11 +20,11 @@ set -g status-right "#[fg=$themes_sep_fg,bg=$themes_sep_bg,nobold] #{battery_
 set-option -g set-titles on
 set-option -g set-titles-string '#H:#S.#I.#P #W #T' # window number,program name, active(or not)
 
-### Set window base index to start with 1 instead of 0
+### Set base index to start with 1 instead of 0
 set -g base-index 1
 
-### Set pane base index to start with 1 instead of 0
-set -g pane-base-index 1
+### Set window base pane base index to start with 1 instead of 0
+set-window-option -g pane-base-index 1
 
 ### tmux-plugins/tpm settings
 # Change key binding for unstalling prefix + R
