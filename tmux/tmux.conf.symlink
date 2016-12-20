@@ -6,6 +6,9 @@ bind C-a send-prefix
 # Reload tmux config
 bind r source-file ~/.tmux.conf
 
+# Disable rename option (Fix for tmuxinator window rename issue)
+set-option -g allow-rename off
+
 # =========== Testing Start ==============
 
 ### kmjohny/tmux-themes settings
