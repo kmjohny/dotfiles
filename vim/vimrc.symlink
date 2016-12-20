@@ -33,7 +33,6 @@ Plug 'nanotech/jellybeans.vim',
 Plug 'powerline/powerline',
 Plug 'scrooloose/syntastic',
 Plug 'scrooloose/nerdtree',
-Plug 'kien/ctrlp.vim',
 Plug 'rking/ag.vim',
 Plug 'kana/vim-textobj-user',
 Plug 'nelstrom/vim-textobj-rubyblock',
@@ -147,13 +146,6 @@ let NERDTreeIgnore = ['tmp', '.yardoc', 'pkg']
 let g:syntastic_mode_map = { 'mode': 'passive' }
 let g:syntastic_ruby_exec = '~/.rvm/rubies/ruby-2.0.0-p0/bin/ruby'
 
-" CtrlP
-nnoremap <silent> t :CtrlP<cr>
-let g:ctrlp_working_path_mode = 2
-let g:ctrlp_by_filename = 1
-let g:ctrlp_max_files = 600
-let g:ctrlp_max_depth = 5
-
 " Go programming
 set rtp+=/usr/local/Cellar/go/1.0.3/misc/vim
 
@@ -163,12 +155,34 @@ command -nargs=0 Quit :qa!
 " Custom (kmjohny)
 com! FormatJSON %!python -m json.tool
 
-" fzf settings/bindings
+"" fzf settings/bindings
 let $FZF_DEFAULT_COMMAND = 'ag -l -g ""'
 let g:fzf_history_dir = '~/.fzf-history'
-nnoremap <silent> <Leader>t :Files<CR>
-nnoremap <space>/ :Ag<CR>
-nnoremap <space>s :Buffers<cr>
+
+" Fuzzy-find with fzf
+map <C-p> :Files<cr>
+nmap <C-p> :Files<cr>
+
+" View commits in fzf
+nmap <Leader>c :Commits<cr>
+
+" Complete from open tmux panes (from @junegunn)
+inoremap <expr> <C-x><C-t> fzf#complete( 'tmuxwords.rb -all-but-current --scroll 499 --min 5')
+inoremap <expr> <C-x><C-k> fzf#complete ('cat /usr/share/dict/words')
+
+" Mapping selecting mappings
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+
+" Insert mode completion
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+
+" Advanced customization using autoload functions
+inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 
 " eclim setup auto-completion using Valloric/YouCompleteMe
 let g:EclimCompletionMethod = 'omnifunc'
