@@ -1,0 +1,2 @@
+# Show all alias related to the input
+ahelp() { alias | grep $1 | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
