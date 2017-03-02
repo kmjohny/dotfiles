@@ -49,7 +49,6 @@ brew 'zsh'
 brew 'zsh-completions'
 brew 'pivotal/tap/springboot'
 
-cask 'chicken'
 cask 'dash'
 cask 'firefox'
 cask 'flash-npapi'
