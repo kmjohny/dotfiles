@@ -13,3 +13,6 @@ osgi.instance.area.default=@user.home/.eclim-workspace
 
 # increase heap size
 -Xmx512M
+
+# Setup lambok as a java agent.
+-javaagent:/Applications/Eclipse.app/Contents/Eclipse/lombok.jar
