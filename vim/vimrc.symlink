@@ -6,6 +6,12 @@ function! BuildComposer(info)
   endif
 endfunction
 
+" Set python2 and python3 paths for nvim
+if !has('nvim')
+  let g:python_host_prog = '/usr/local/var/pyenv/versions/2.7.13/envs/neovim-2.7.13/bin/python'
+  let g:python3_host_prog =  '/usr/local/var/pyenv/versions/3.6.0/envs/neovim-3.6.0/bin/python'
+endif
+
 set nocompatible
 filetype off
 
@@ -24,7 +30,9 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' },
 
 Plug 'eugen0329/vim-esearch',
 Plug 'flazz/vim-colorschemes',
-Plug 'tpope/vim-sensible',
+if !has('nvim')
+  Plug 'tpope/vim-sensible',
+endif
 Plug 'tpope/vim-surround',
 Plug 'tpope/vim-fugitive',
 Plug 'tpope/vim-rails',
