@@ -1,11 +1,3 @@
-" Build vim-markdown-composer
-function! BuildComposer(info)
-  if a:info.status != 'unchanged' || a:info.force
-    !cargo build --release
-    UpdateRemotePlugins
-  endif
-endfunction
-
 " Set python2 and python3 paths for nvim
 if !has('nvim')
   let g:python_host_prog = '/usr/local/var/pyenv/versions/2.7.13/envs/neovim-2.7.13/bin/python'
@@ -23,7 +15,8 @@ Plug 'bfredl/nvim-miniyank',
 Plug 'bkad/CamelCaseMotion',
 Plug 'bling/vim-airline',
 Plug 'vim-airline/vim-airline-themes',
-Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') },
+" Assumes livedown is already installed using node.
+Plug 'shime/vim-livedown',
 " Assumes fzf is already installed using brew. 
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim',
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' },
