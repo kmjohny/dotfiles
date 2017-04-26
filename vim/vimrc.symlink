@@ -39,12 +39,26 @@ Plug 'kana/vim-textobj-user',
 Plug 'nelstrom/vim-textobj-rubyblock',
 Plug 'slim-template/vim-slim',
 Plug 'SirVer/ultisnips',
+Plug 'honza/vim-snippets',
 Plug 'Yggdroot/indentLine',
 Plug 'ervandew/supertab',
 Plug 'Raimondi/delimitMate',
-Plug 'airblade/vim-rooter'
+Plug 'airblade/vim-rooter',
+Plug 'vim-scripts/vim-auto-save'
 
 call plug#end()
+
+" SirVer/ultisnips setup.
+let g:UltiSnipsSnippetDirectories=['UltiSnips']
+let g:UltiSnipsExpandTrigger='<c-j>'
+let g:UltiSnipsJumpForwardTrigger='<c-k>'
+let g:UltiSnipsJumpBackwardTrigger='<s-c-k>'
+
+" Valloric/YouCompleteMe setup
+let g:ycm_filetype_blacklist = {}
+
+" vim-scripts/vim-auto-save setup (do not change the 'updatetime' option)
+let g:auto_save_no_updatetime = 1
 
 " refresh gitgutter every 250ms rather than 2s
 set updatetime=250
