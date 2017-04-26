@@ -48,6 +48,11 @@ Plug 'vim-scripts/vim-auto-save'
 
 call plug#end()
 
+" wildmenu setup
+set wildmenu
+set wildmode=list:longest,full,full
+set wildignore=*.class,*.git
+
 " SirVer/ultisnips setup.
 let g:UltiSnipsSnippetDirectories=['UltiSnips']
 let g:UltiSnipsExpandTrigger='<c-j>'
