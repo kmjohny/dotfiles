@@ -44,7 +44,10 @@ Plug 'Yggdroot/indentLine',
 Plug 'ervandew/supertab',
 Plug 'Raimondi/delimitMate',
 Plug 'airblade/vim-rooter',
-Plug 'vim-scripts/vim-auto-save'
+Plug 'vim-scripts/vim-auto-save',
+" xolox/vim-misc is required by xolox/vim-notes
+Plug 'xolox/vim-misc',
+Plug 'xolox/vim-notes'
 
 call plug#end()
 
@@ -52,6 +55,10 @@ call plug#end()
 set wildmenu
 set wildmode=list:longest,full,full
 set wildignore=*.class,*.git
+
+" xolox/vim-notes setup
+let g:notes_directories = ['~/Documents/notes/work', '~/Documents/notes/personal']
+let g:notes_suffix = '.txt'
 
 " SirVer/ultisnips setup.
 let g:UltiSnipsSnippetDirectories=['UltiSnips']
