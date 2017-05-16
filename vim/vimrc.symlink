@@ -110,6 +110,7 @@ set nobackup
 set hlsearch
 set ignorecase
 set smartcase
+set mouse=a
 
 " Automatic formatting
 autocmd BufWritePre *.rb :%s/\s\+$//e
