@@ -1,6 +1,5 @@
 # Path to your antigen enstallation.
-export ANTIGEN=$(brew --prefix)/Cellar/antigen/2.1.1/share/antigen
-source $ANTIGEN/antigen.zsh
+source $(brew --prefix)/share/antigen/antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
