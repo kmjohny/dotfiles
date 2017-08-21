@@ -1,7 +1,7 @@
 " Set python2 and python3 paths for nvim
 if !has('nvim')
   let g:python_host_prog = '/usr/local/var/pyenv/versions/2.7.13/envs/neovim-2.7.13/bin/python'
-  let g:python3_host_prog =  '/usr/local/var/pyenv/versions/3.6.0/envs/neovim-3.6.0/bin/python'
+  let g:python3_host_prog =  '/usr/local/var/pyenv/versions/3.6.2/envs/neovim-3.6.2/bin/python'
 endif
 
 set nocompatible

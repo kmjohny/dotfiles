@@ -2,10 +2,10 @@
 
 if test ! $(which spoof)
 then
-  sudo npm install -g spoof
+sudo npm install -g spoof
 fi
 
 # install livedown 
 if test ! $(which livedown)
-  npm install -g livedown
+npm install -g livedown
 fi
