@@ -1,5 +1,5 @@
 " Set python2 and python3 paths for nvim
-if !has('nvim')
+if has('nvim')
   let g:python_host_prog = '/usr/local/var/pyenv/versions/2.7.13/envs/neovim-2.7.13/bin/python'
   let g:python3_host_prog =  '/usr/local/var/pyenv/versions/3.6.2/envs/neovim-3.6.2/bin/python'
 endif
@@ -32,7 +32,8 @@ Plug 'tpope/vim-rails',
 Plug 'tpope/vim-rake',
 Plug 'nanotech/jellybeans.vim',
 Plug 'powerline/powerline',
-Plug 'scrooloose/syntastic',
+Plug 'python-mode/python-mode',
+" Plug 'scrooloose/syntastic',
 Plug 'scrooloose/nerdtree',
 Plug 'rking/ag.vim',
 Plug 'kana/vim-textobj-user',
@@ -45,6 +46,7 @@ Plug 'ervandew/supertab',
 Plug 'Raimondi/delimitMate',
 Plug 'airblade/vim-rooter',
 Plug 'vim-scripts/vim-auto-save',
+Plug 'w0rp/ale',
 " xolox/vim-misc is required by xolox/vim-notes
 Plug 'xolox/vim-misc',
 Plug 'xolox/vim-notes'
@@ -55,6 +57,17 @@ call plug#end()
 set wildmenu
 set wildmode=list:longest,full,full
 set wildignore=*.class,*.git
+
+" After this is configured, :ALEFix will try and fix your JS code with ESLint.
+let g:ale_fixers = {
+\   'python': ['autopep8',
+\              'flake8', 
+\              'isort', 
+\              'mypy', 
+\              'pycodestyle', 
+\              'pylint',
+\              'yapf'],
+\}
 
 " xolox/vim-notes setup
 let g:notes_directories = ['~/Documents/notes/work', '~/Documents/notes/personal']
@@ -68,6 +81,8 @@ let g:UltiSnipsJumpBackwardTrigger='<s-c-k>'
 
 " Valloric/YouCompleteMe setup
 let g:ycm_filetype_blacklist = {}
+let g:ycm_python_binary_path = 'python'
+let g:ycm_autoclose_preview_window_after_completion=1
 
 " vim-scripts/vim-auto-save setup (do not change the 'updatetime' option)
 let g:auto_save_no_updatetime = 1
@@ -151,6 +166,9 @@ nmap <leader>s<right>  :rightbelow vnew<cr>
 nmap <leader>s<up>     :leftabove  new<cr>
 nmap <leader>s<down>   :rightbelow new<cr>
 
+" Will goto definition of whatever I’m currently on
+map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
 " Tab between buffers
 noremap <tab> <c-w><c-w>
 
@@ -171,8 +189,9 @@ let NERDTreeHighlightCursorline=1
 let NERDTreeIgnore = ['tmp', '.yardoc', 'pkg']
 
 " Syntastic
-let g:syntastic_mode_map = { 'mode': 'passive' }
-let g:syntastic_ruby_exec = '~/.rvm/rubies/ruby-2.0.0-p0/bin/ruby'
+" let g:syntastic_mode_map = { 'mode': 'passive' }
+" let g:syntastic_ruby_exec = '~/.rvm/rubies/ruby-2.0.0-p0/bin/ruby'
+" let g:syntastic_python_checkers = ['pylint']
 
 " Go programming
 set rtp+=/usr/local/Cellar/go/1.0.3/misc/vim
