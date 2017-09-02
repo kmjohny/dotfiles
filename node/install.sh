@@ -7,5 +7,6 @@ fi
 
 # install livedown 
 if test ! $(which livedown)
+then
 npm install -g livedown
 fi
