@@ -61,12 +61,18 @@ set wildignore=*.class,*.git
 " After this is configured, :ALEFix will try and fix your JS code with ESLint.
 let g:ale_fixers = {
 \   'python': ['autopep8',
-\              'flake8', 
 \              'isort', 
+\              'yapf',
+\              'add_blank_lines_for_python_control_statements',
+\              'remove_trailing_lines']
+\}
+
+" ALE linters
+let g:ale_linters = {
+\   'python': ['flake8',  
 \              'mypy', 
 \              'pycodestyle', 
-\              'pylint',
-\              'yapf'],
+\              'pylint']
 \}
 
 " xolox/vim-notes setup
