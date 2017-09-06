@@ -1,7 +1,7 @@
 #!/bin/sh
 # Check for eclim
 
-ECLIM_DOWNLOAD_URL=https://github.com/ervandew/eclim/releases/download/2.6.0/eclim_2.6.0.jar
+ECLIM_DOWNLOAD_URL=https://github.com/ervandew/eclim/releases/download/2.7.0/eclim_2.7.0.jar
 ECLIM_DOWNLOAD_FILE=/tmp/eclim.jar
 ECLIPSE_HOME=/Applications/Eclipse.app/Contents/Eclipse
 
