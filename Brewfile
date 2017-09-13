@@ -52,6 +52,7 @@ brew 'zsh'
 brew 'zsh-completions'
 brew 'pivotal/tap/springboot'
 
+cask 'adobe-acrobat-reader'
 cask 'dash'
 cask 'firefox'
 cask 'flash-npapi'
