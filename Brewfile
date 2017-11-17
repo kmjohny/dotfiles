@@ -1,4 +1,4 @@
-cask_args appdir: '/Applications'
+cask_args appdir: '/Applications':
 
 tap 'caskroom/cask'
 tap 'caskroom/versions'
@@ -9,6 +9,7 @@ tap 'pivotal/tap'
 
 brew 'antigen'
 brew 'apache-drill'
+brew 'awscli'
 brew 'bash-completion'
 brew 'cfssl'
 brew 'docker-completion'
