@@ -44,3 +44,44 @@ unset config_files
 # Custom Settings
 ########################################################################
 source $HOME/.antigen-config
+
+export HOMEBREW_GITHUB_API_TOKEN=878909ccd3168f261a0070e918cd288b74edaeba
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/usr/local/var/pyenv/versions/miniconda3-latest/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/usr/local/var/pyenv/versions/miniconda3-latest/etc/profile.d/conda.sh" ]; then
+        . "/usr/local/var/pyenv/versions/miniconda3-latest/etc/profile.d/conda.sh"
+    else
+        export PATH="/usr/local/var/pyenv/versions/miniconda3-latest/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+conda activate general
+
+
+# tmuxifier setup
+export PATH="$HOME/.tmuxifier/bin:$PATH"
+
+eval "$(tmuxifier init -)"
+
+export TMUXIFIER_LAYOUT_PATH="$HOME/.tmuxifier-layouts"
+
+# Increase zsh history size.
+export HISTSIZE=1000000000
+export SAVEHIST=$HISTSIZE
+setopt EXTENDED_HISTORY
+
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="bg=#88A3D4, fg=#91CFFF"
+
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/mathewj3/.sdkman"
+[[ -s "/Users/mathewj3/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/mathewj3/.sdkman/bin/sdkman-init.sh"

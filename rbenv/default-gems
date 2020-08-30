@@ -1,2 +1,4 @@
 bundler
 tmuxinator
+guard-gradle
+guard-pytest

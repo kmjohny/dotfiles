@@ -15,4 +15,4 @@ osgi.instance.area.default=@user.home/.eclim-workspace
 -Xmx512M
 
 # Setup lambok as a java agent.
--javaagent:/Applications/Eclipse.app/Contents/Eclipse/lombok.jar
+-javaagent:/Applications/eclipse/java-photon/Eclipse.app/Contents/Eclipse/lombok.jar

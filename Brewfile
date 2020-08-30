@@ -1,4 +1,4 @@
-cask_args appdir: '/Applications':
+cask_args appdir: '/Applications'
 
 tap 'caskroom/cask'
 tap 'caskroom/versions'
@@ -74,8 +74,8 @@ cask 'squirrelsql'
 cask 'vagrant'
 cask 'vagrant-manager'
 cask 'virtualbox'
-cask 'docker'
-cask 'eclipse-java'
+# cask 'docker'
+# cask 'eclipse-java'
 cask 'intellij-idea-ce'
 cask 'macdown'
 cask 'mattr-slate'

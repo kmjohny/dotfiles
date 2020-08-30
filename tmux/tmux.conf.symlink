@@ -39,7 +39,6 @@ set -g @tpm-clean "R"
 # =========== Testing End ==============
 
 # List of plugins (Keep at the bottom of tmux.conf)
-set -g @plugin "tmux-plugins/tpm"
 set -g @plugin "tmux-plugins/tmux-sessionist"
 set -g @plugin "tmux-plugins/tmux-sensible"
 set -g @plugin "tmux-plugins/tmux-pain-control"
@@ -47,6 +46,7 @@ set -g @plugin 'tmux-plugins/tmux-resurrect'
 # set -g @plugin 'tmux-plugins/tmux-continuum'
 set -g @plugin "kmjohny/tmux-battery"
 set -g @plugin "kmjohny/tmux-themes"
+set -g @plugin "tmux-plugins/tpm"
 
 ### Settings for tmux-resurrect.
 # restore vim and nvim sessions

@@ -21,17 +21,18 @@ if [ ! -n "${BULLETTRAIN_PROMPT_ORDER+1}" ]; then
     time
     status
     custom
-    context
+#    context
     dir
     screen
     perl
-    ruby
+#    ruby
     virtualenv
     nvm
     aws
     go
     rust
     elixir
+    kctx
     git
     hg
     cmd_exec_time
@@ -161,6 +162,10 @@ fi
 if [ ! -n "${BULLETTRAIN_KCTX_PREFIX+1}" ]; then
   BULLETTRAIN_KCTX_PREFIX="⎈"
 fi
+if [ ! -n "${BULLETTRAIN_KCTX_KCONFIG+1}" ]; then
+  BULLETTRAIN_KCTX_KCONFIG="/Users/mathewj3/.kube/config"
+fi
+
 
 # ELIXIR
 if [ ! -n "${BULLETTRAIN_ELIXIR_BG+1}" ]; then
@@ -557,7 +562,12 @@ prompt_kctx() {
   fi
   if command -v kubectl > /dev/null 2>&1; then
     if [[ -f $BULLETTRAIN_KCTX_KCONFIG ]]; then
-      prompt_segment $BULLETTRAIN_KCTX_BG $BULLETTRAIN_KCTX_FG $BULLETTRAIN_KCTX_PREFIX" $(cat $BULLETTRAIN_KCTX_KCONFIG|grep current-context| awk '{print $2}')"
+#      prompt_segment $BULLETTRAIN_KCTX_BG $BULLETTRAIN_KCTX_FG $BULLETTRAIN_KCTX_PREFIX" $(cat $BULLETTRAIN_KCTX_KCONFIG|grep current-context| awk '{print $2}')"
+      prompt_segment $BULLETTRAIN_KCTX_BG $BULLETTRAIN_KCTX_FG $BULLETTRAIN_KCTX_PREFIX" `kubectl config current-context`/`kubectl config get-contexts --no-headers | grep '*' | awk '{print $5}'`"
+      
+      
+#      prompt_segment white black "k8s-`kubectl config current-context`/`kubectl config get-contexts --no-headers | grep '*' | awk '{print $5}'`"
+    
     fi  
   fi
 }
