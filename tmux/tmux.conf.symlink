@@ -19,12 +19,20 @@ set-option -g allow-rename off
 set -g @themes_color "orange"
 
 ### Set left and right status 
-set -g status-left "#[fg=$themes_fg,bg=$themes_bg,bold] ❐ #S #[fg=$themes_sep_fg,bg=$themes_sep_bg,nobold]#[fg=colour233,bg=default,bold] #(whoami) #[fg=$themes_sep_fg,bg=$themes_sep_bg,nobold]#[fg=colour240,bg=default,bold] #I:#P #[fg=$themes_sep_fg,bg=$themes_sep_bg,nobold]"
-set -g status-right "#[fg=$themes_sep_fg,bg=$themes_sep_bg,nobold] #{battery_icon} #{battery_graph_pretty} #{battery_percentage} #[fg=$themes_sep_fg,bg=$themes_sep_bg,nobold] #[fg=colour240,bg=default,bold] %H:%M:%S | %d-%b-%y #[fg=$themes_sep_fg,bg=$themes_sep_bg,nobold] #[fg=$themes_fg,bg=$themes_bg,bold] #H "
+#set -g status-left "#[fg=$themes_fg,bg=$themes_bg,bold] ❐ #S #[fg=$themes_sep_fg,bg=$themes_sep_bg,nobold]#[fg=colour233,bg=default,bold] #(whoami) #[fg=$themes_sep_fg,bg=$themes_sep_bg,nobold]#[fg=colour240,bg=default,bold] #I:#P #[fg=$themes_sep_fg,bg=$themes_sep_bg,nobold]"
+#set -g status-right "#[fg=$themes_sep_fg,bg=$themes_sep_bg,nobold] #{battery_icon} #{battery_graph_pretty} #{battery_percentage} #[fg=$themes_sep_fg,bg=$themes_sep_bg,nobold] #[fg=colour240,bg=default,bold] %H:%M:%S | %d-%b-%y #[fg=$themes_sep_fg,bg=$themes_sep_bg,nobold] #[fg=$themes_fg,bg=$themes_bg,bold] #H "
+
+set -g status-left "#[fg=colour255,bg=colour130,bold] ❐ #S #[fg=colour173,bg=default,bold]#[fg=colour255,bg=default,bold] #(whoami) #[fg=colour173,bg=default,bold]#[fg=colour255,bg=default,bold] #I:#P #[fg=colour173,bg=default,nobold]"
+set -g status-right "#[fg=colour173,bg=default,nobold] #{battery_color_fg} #{battery_icon_status} #{battery_graph_pretty} #{battery_color_charge_fg} #{battery_percentage} #[fg=colour173,bg=default,nobold] #[fg=colour255,bg=default,bold] %H:%M:%S | %d-%b-%y #[fg=colour173,bg=default,nobold] #[fg=colour255,bg=colour130,bold] #H "
+
+
 
 ### Set titles
-set-option -g set-titles on
-set-option -g set-titles-string '#H:#S.#I.#P #W #T' # window number,program name, active(or not)
+# set-option -g set-titles on
+# set-option -g set-titles-string '#H:#S.#I.#P #W #T' # window number,program name, active(or not)
+set -g window-status-format "#[fg=colour255,bg=default,nobold] #I:#W#F "
+set -g window-status-current-format "#[fg=colour173,bg=default,nobold] #I:#W#F #[fg=colour173,bg=default,nobold]"
+
 
 ### Set base index to start with 1 instead of 0
 set -g base-index 1

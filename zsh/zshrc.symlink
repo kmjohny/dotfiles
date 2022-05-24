@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+. "$HOME/.fig/shell/zshrc.pre.zsh"
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
 
@@ -45,9 +47,7 @@ unset config_files
 ########################################################################
 source $HOME/.antigen-config
 
-export HOMEBREW_GITHUB_API_TOKEN=878909ccd3168f261a0070e918cd288b74edaeba
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export HOMEBREW_GITHUB_API_TOKEN=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
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -81,7 +81,17 @@ setopt EXTENDED_HISTORY
 
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="bg=#88A3D4, fg=#91CFFF"
 
-
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/mathewj3/.sdkman"
 [[ -s "/Users/mathewj3/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/mathewj3/.sdkman/bin/sdkman-init.sh"
+
+
+export PYTHON_HOST_PROG=/usr/local/var/pyenv/versions/miniconda3-latest/envs/general-py2/bin/python
+export PYTHON3_HOST_PROG=/usr/local/var/pyenv/versions/miniconda3-latest/envs/general/bin/python
+
+# Timer Plugin setup
+TIMER_FORMAT='[%d]'; 
+TIMER_PRECISION=3
+
+# Fig post block. Keep at the bottom of this file.
+. "$HOME/.fig/shell/zshrc.post.zsh"
