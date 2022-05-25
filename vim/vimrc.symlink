@@ -53,7 +53,7 @@ Plug 'w0rp/ale',
 " xolox/vim-misc is required by xolox/vim-notes
 Plug 'xolox/vim-misc',
 Plug 'xolox/vim-notes'
-" Plug 'jupyter-vim/jupyter-vim'
+Plug 'wmvanvliet/jupyter-vim'
 Plug 'lambdalisue/vim-pyenv'
 Plug 'rhysd/devdocs.vim'
 " Plug 'jupyter-vim/jupyter-vim'

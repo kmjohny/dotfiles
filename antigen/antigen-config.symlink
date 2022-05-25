@@ -17,10 +17,7 @@ antigen bundle git-flow-avh
 antigen bundle github
 antigen bundle gitignore
 antigen bundle gradle
-<<<<<<< HEAD
-=======
 antigen bundle helm
->>>>>>> d5bc998 (Update dotfiles)
 antigen bundle iterm2
 antigen bundle jsontools
 antigen bundle kubectl
