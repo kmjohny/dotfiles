@@ -1,5 +1,5 @@
-# Fig pre block. Keep at the top of this file.
-. "$HOME/.fig/shell/zshrc.pre.zsh"
+# CodeWhisperer pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh"
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
 
@@ -47,32 +47,29 @@ unset config_files
 ########################################################################
 source $HOME/.antigen-config
 
-export HOMEBREW_GITHUB_API_TOKEN=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
+export HOMEBREW_GITHUB_API_TOKEN=<NOT_SET>
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/usr/local/var/pyenv/versions/miniconda3-latest/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/opt/homebrew/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/usr/local/var/pyenv/versions/miniconda3-latest/etc/profile.d/conda.sh" ]; then
-        . "/usr/local/var/pyenv/versions/miniconda3-latest/etc/profile.d/conda.sh"
+    if [ -f "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
+        . "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh"
     else
-        export PATH="/usr/local/var/pyenv/versions/miniconda3-latest/bin:$PATH"
+        export PATH="/opt/homebrew/Caskroom/miniconda/base/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+# conda activate general
 
-conda activate general
 
-
-# tmuxifier setup
-export PATH="$HOME/.tmuxifier/bin:$PATH"
-
-eval "$(tmuxifier init -)"
-
-export TMUXIFIER_LAYOUT_PATH="$HOME/.tmuxifier-layouts"
+# tmuxifier setup (Removed)
+# export PATH="$HOME/.tmuxifier/bin:$PATH"
+# eval "$(tmuxifier init -)"
+# export TMUXIFIER_LAYOUT_PATH="$HOME/.tmuxifier-layouts"
 
 # Increase zsh history size.
 export HISTSIZE=1000000000
@@ -81,17 +78,29 @@ setopt EXTENDED_HISTORY
 
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="bg=#88A3D4, fg=#91CFFF"
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/mathewj3/.sdkman"
-[[ -s "/Users/mathewj3/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/mathewj3/.sdkman/bin/sdkman-init.sh"
-
-
-export PYTHON_HOST_PROG=/usr/local/var/pyenv/versions/miniconda3-latest/envs/general-py2/bin/python
+# export PYTHON_HOST_PROG=/usr/local/var/pyenv/versions/miniconda3-latest/envs/general-py2/bin/python # (Removed)
 export PYTHON3_HOST_PROG=/usr/local/var/pyenv/versions/miniconda3-latest/envs/general/bin/python
 
 # Timer Plugin setup
 TIMER_FORMAT='[%d]'; 
 TIMER_PRECISION=3
 
-# Fig post block. Keep at the bottom of this file.
-. "$HOME/.fig/shell/zshrc.post.zsh"
+# Global Protect
+alias gp-up="launchctl load /Library/LaunchAgents/com.paloaltonetworks.gp.pangps.plist; launchctl load /Library/LaunchAgents/com.paloaltonetworks.gp.pangpa.plist"
+alias gp-down="launchctl unload /Library/LaunchAgents/com.paloaltonetworks.gp.pangps.plist; launchctl unload /Library/LaunchAgents/com.paloaltonetworks.gp.pangpa.plist"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+source /Users/mathewj3/.docker/init-zsh.sh || true # Added by Docker Desktop
+
+# Initialize direnv
+eval "$(direnv hook zsh)"
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
+
+# CodeWhisperer post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh"

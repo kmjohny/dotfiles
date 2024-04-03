@@ -11,16 +11,16 @@ antigen bundle brew
 antigen bundle djui/alias-tips
 antigen bundle fzf
 antigen bundle gem
-antigen bundle git
+# antigen bundle git
 antigen bundle git-extras
 antigen bundle git-flow-avh
-antigen bundle github
+# antigen bundle github
 antigen bundle gitignore
 antigen bundle gradle
-antigen bundle helm
+# antigen bundle helm
 antigen bundle iterm2
 antigen bundle jsontools
-antigen bundle kubectl
+# antigen bundle kubectl
 antigen bundle mvn
 antigen bundle node
 antigen bundle ng
@@ -35,6 +35,8 @@ antigen bundle tmux
 antigen bundle tmuxinator
 antigen bundle virtualenv
 antigen bundle vagrant
+# antigen bundle matthieusb/zsh-sdkman
+
 # antigen bundle zzag/zsh-conda
 
 # Syntax highlighting bundle.
@@ -45,6 +47,7 @@ antigen bundle zsh-users/zsh-completions
 
 # Load the theme.
 antigen theme caiogondim/bullet-train-oh-my-zsh-theme bullet-train
+# antigen theme gnzh
 
 # Tell antigen that you're done.
 antigen apply

@@ -43,8 +43,6 @@ VIRTUAL_ENV_DISABLE_PROMPT=true
 if [ ! -n "${BULLETTRAIN_PROMPT_ORDER+1}" ]; then
   BULLETTRAIN_PROMPT_ORDER=(
     time
-    status
-    context
     dir
     git
     cmd_exec_time
