@@ -47,7 +47,7 @@ unset config_files
 ########################################################################
 source $HOME/.antigen-config
 
-export HOMEBREW_GITHUB_API_TOKEN=<NOT_SET>
+export HOMEBREW_GITHUB_API_TOKEN=NA
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -84,10 +84,6 @@ export PYTHON3_HOST_PROG=/usr/local/var/pyenv/versions/miniconda3-latest/envs/ge
 # Timer Plugin setup
 TIMER_FORMAT='[%d]'; 
 TIMER_PRECISION=3
-
-# Global Protect
-alias gp-up="launchctl load /Library/LaunchAgents/com.paloaltonetworks.gp.pangps.plist; launchctl load /Library/LaunchAgents/com.paloaltonetworks.gp.pangpa.plist"
-alias gp-down="launchctl unload /Library/LaunchAgents/com.paloaltonetworks.gp.pangps.plist; launchctl unload /Library/LaunchAgents/com.paloaltonetworks.gp.pangpa.plist"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
