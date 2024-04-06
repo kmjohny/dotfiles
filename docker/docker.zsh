@@ -1,0 +1,1 @@
+export PATH="/Users/mathewj3/.docker/bin:$PATH"

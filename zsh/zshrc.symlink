@@ -89,8 +89,6 @@ TIMER_PRECISION=3
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-source /Users/mathewj3/.docker/init-zsh.sh || true # Added by Docker Desktop
-
 # Initialize direnv
 eval "$(direnv hook zsh)"
 
