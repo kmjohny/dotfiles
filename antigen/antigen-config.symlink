@@ -12,6 +12,7 @@ antigen bundle djui/alias-tips
 antigen bundle fzf
 antigen bundle gem
 # antigen bundle git
+antigen bundle git-prompt
 antigen bundle git-extras
 antigen bundle git-flow-avh
 # antigen bundle github
