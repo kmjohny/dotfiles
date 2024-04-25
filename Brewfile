@@ -119,6 +119,7 @@ brew "zsh-completions"
 brew "hashicorp/tap/vault"
 brew "johanhaleby/kubetail/kubetail"
 brew "spring-io/tap/spring-boot"
+brew "azure-cli"
 cask "adobe-acrobat-reader", args: { appdir: "/Applications" }
 cask "android-studio"
 cask "beyond-compare", args: { appdir: "/Applications" }

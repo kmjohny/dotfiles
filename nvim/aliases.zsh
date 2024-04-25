@@ -5,7 +5,7 @@ alias vim=nvim
 # alias nvim-kick="NVIM_APPNAME=kickstart nvim"
 alias cvim="NVIM_APPNAME=NvChad nvim"
 alias avim="NVIM_APPNAME=astronvim nvim"
-alias avimv3="NVIM_APPNAME=astronvim_v3 nvim"
+alias nvim="NVIM_APPNAME=astronvim nvim"
 
 function nvims() {
   # items=("default" "kickstart" "LazyVim" "NvChad" "AstroNvim")
